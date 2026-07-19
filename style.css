@@ -396,7 +396,7 @@ button {
 .photo-tag {
   position: absolute;
   z-index: 2;
-  right: -24px;
+  right: 11px;
   bottom: 31px;
   display: flex;
   align-items: center;
@@ -437,13 +437,13 @@ button {
 
 .signal-corner-one {
   top: 57px;
-  right: -28px;
+  right: 0;
   border-width: 1px 1px 0 0;
 }
 
 .signal-corner-two {
   bottom: 59px;
-  left: -27px;
+  left: 0;
   border-width: 0 0 1px 1px;
 }
 
@@ -1630,11 +1630,11 @@ a.project-link:hover svg {
   }
 
   .signal-corner-one {
-    right: -15px;
+    right: 0;
   }
 
   .signal-corner-two {
-    left: -15px;
+    left: 0;
   }
 
   .section {
