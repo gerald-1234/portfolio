@@ -1342,6 +1342,28 @@ a.project-link:hover svg {
   font-size: 17px;
 }
 
+.error-shell {
+  overflow: hidden;
+}
+
+.error-code {
+  position: absolute;
+  top: 17px;
+  right: 34px;
+  color: rgba(103, 219, 228, 0.08);
+  font-family: var(--mono);
+  font-size: 150px;
+  font-weight: 500;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
@@ -1746,6 +1768,12 @@ a.project-link:hover svg {
 
   .thanks-shell h1 {
     font-size: 37px;
+  }
+
+  .error-code {
+    top: 23px;
+    right: 18px;
+    font-size: 88px;
   }
 }
 
