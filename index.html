@@ -126,7 +126,7 @@
       </section>
 
       <section class="work section" id="work"><div class="container">
-        <div class="section-heading work-heading reveal"><p class="section-kicker">02 / SELECTED WORK</p><h2>Projects built around real operational needs.</h2><p>Four focused builds across education technology, public web, and flight reservations.</p></div>
+        <div class="section-heading work-heading reveal"><p class="section-kicker">02 / SELECTED WORK</p><h2>Projects built around real operational needs.</h2><p>Five focused builds across education technology, public web, flight reservations, and security tools.</p></div>
         <div class="project-list">
           <article class="project project-featured reveal">
             <div class="project-display portal-display" aria-hidden="true">
@@ -192,6 +192,40 @@
           </div>
         </div>
       </div></section>
+
+      <article class="project project-reverse reveal">
+        <div class="project-copy">
+          <div class="project-topline"><span>05</span><span>Systems / CLI</span></div>
+          <h3>GitHub Secrets Watcher</h3>
+          <p>A command-line tool that scans public GitHub repositories for accidentally committed environment files (.env, config files with secrets, etc.) in the Git history and reports findings (read-only, no modifications).</p>
+          <ul class="project-points">
+            <li>Scans public repositories for a given GitHub username and checks Git history for sensitive files</li>
+            <li>Provides direct links to exact commits where each file appears with URL-encoding for safety</li>
+            <li>Excludes common directories (node_modules, .git, dist, etc.) to reduce noise</li>
+            <li>Validates commit hash format (40 hex characters) to prevent broken links</li>
+            <li>Read-only operations only - performs no modifications to any repositories</li>
+            <li>Optional GitHub token for higher API rate limits</li>
+            <li>Colored terminal output for better readability (ANSI colors, Windows VT processing enabled)</li>
+          </ul>
+          <div class="tech-list"><span>C++20</span><span>libcurl</span><span>JSON</span><span>Git</span><span>ANSI Colors</span></div>
+          <a class="project-link" href="https://github.com/Gerald-Mathew/github-secrets-watcher" target="_blank" rel="noreferrer">View on GitHub <i data-lucide="arrow-up-right"></i></a>
+        </div>
+        <div class="project-display cli-display" aria-hidden="true">
+          <div class="terminal-window">
+            <div class="terminal-bar"><span></span><span></span><span></span><em>github-secrets-watcher</em></div>
+            <p><b>></b> Scan initiated for username: Gerald-Mathew</p>
+            <p><b>></b> History depth: 100 commits</p>
+            <p><b>></b> Maximum repos to scan: 5</p>
+            <p><b>></b> Found 7 public repositories to scan.</p>
+            <p><b>></b> [3/7] Scanning: CareConnect-Clinic-Appointment-System</p>
+            <p><b>></b> [WARN] Found 5 potential environment/configuration files:</p>
+            <p><b>></b>     - client/assets/js/config.js</p>
+            <p><b>></b>       [LINK] https://github.com/Gerald-Mathew/CareConnect-Clinic-Appointment-System/blob/...</p>
+            <p><b>></b> [INFO] Scan complete!</p>
+          </div>
+        </div>
+        <span class="display-note">SECURITY TOOL / 005</span>
+      </article>
 
       <section class="stack section container" id="stack">
         <div class="section-heading reveal"><p class="section-kicker">03 / TOOLKIT</p><h2>A stack selected for the job at hand.</h2></div>
