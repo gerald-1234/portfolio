@@ -1795,3 +1795,8 @@ a.project-link:hover svg {
     transform: none;
   }
 }
+
+/* Adjust the last project's terminal window height to match others */
+.project-reverse:last-of-type .terminal-window {
+  min-height: 250px !important;
+}
