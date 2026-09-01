@@ -1796,7 +1796,6 @@ a.project-link:hover svg {
   }
 }
 
-/* Adjust the last project's terminal window height to match others */
-.project-reverse:last-of-type .terminal-window {
-  min-height: 250px !important;
+article.secret {
+    padding: 0 15px;
 }
