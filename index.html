@@ -197,14 +197,17 @@
         <div class="project-copy">
           <div class="project-topline"><span>05</span><span>Systems / CLI</span></div>
           <h3>GitHub Secrets Watcher</h3>
-          <p>A command-line tool that scans public GitHub repositories for accidentally committed environment files (.env, config files with secrets, etc.) in the Git history and reports findings (read-only, no modifications).</p>
+          <p>A command-line tool that scans GitHub repositories (public and private with token) for accidentally committed environment files (.env, config files with secrets, etc.) in the Git history and reports findings (read-only, no modifications). Features include multi-threaded scanning, configurable output formats (text, JSON, CSV), and direct links to exact commits.</p>
           <ul class="project-points">
-            <li>Scans public repositories for a given GitHub username and checks Git history for sensitive files</li>
-            <li>Provides direct links to exact commits where each file appears with URL-encoding for safety</li>
+            <li>Scans public and private repositories (with token) for a given GitHub username</li>
+            <li>Checks Git history for environment/configuration files across multiple branches (configurable depth)</li>
             <li>Excludes common directories (node_modules, .git, dist, etc.) to reduce noise</li>
+            <li>Provides direct links to exact commits where each file appears (URL-encoded for safety)</li>
             <li>Validates commit hash format (40 hex characters) to prevent broken links</li>
             <li>Read-only operations only - performs no modifications to any repositories</li>
-            <li>Optional GitHub token for higher API rate limits</li>
+            <li>Optional GitHub token for higher API rate limits and access to private repositories</li>
+            <li>Multi-threaded repository scanning for improved performance (configurable thread count)</li>
+            <li>Configurable output formats: human-readable text, machine-readable JSON, or CSV</li>
             <li>Colored terminal output for better readability (ANSI colors, Windows VT processing enabled)</li>
           </ul>
           <div class="tech-list"><span>C++20</span><span>libcurl</span><span>JSON</span><span>Git</span><span>ANSI Colors</span></div>
