@@ -78,7 +78,7 @@
     <main id="top">
       <section class="hero container">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="live-dot"></span> Available for internships, freelance work &amp; collaboration</p>
+          <p class="eyebrow"><span class="live-dot"></span> Available for internships, freelance work & collaboration</p>
           <h1>Building practical software with <span class="accent-text">intent.</span></h1>
           <p class="hero-lede">I am Mathew Gerald Chukwudera, a Software Engineering student who builds secure web platforms and thoughtful systems software for real-world workflows.</p>
           <div class="hero-actions">
@@ -86,7 +86,7 @@
             <a class="button button-quiet" href="mailto:mathewgerald.14@gmail.com">Email me <i data-lucide="send"></i></a>
           </div>
           <div class="hero-meta" aria-label="Professional summary">
-            <div><span class="meta-label">Focus</span><span>Full-stack &amp; systems</span></div>
+            <div><span class="meta-label">Focus</span><span>Full-stack & systems</span></div>
             <div><span class="meta-label">Based in</span><span>Owerri, Nigeria</span></div>
             <div><span class="meta-label">Status</span><span>200 Level, B.Tech</span></div>
           </div>
@@ -149,7 +149,7 @@
               <div class="tech-list"><span>HTML/CSS/JS</span><span>Cloudflare Workers</span><span>Responsive UI</span></div>
               <a class="project-link" href="https://www.shermannagel.sch.ng" target="_blank" rel="noreferrer">Open live website <i data-lucide="arrow-up-right"></i></a>
             </div>
-            <div class="project-display website-display" aria-hidden="true"><div class="site-window"><div class="site-nav"><b>SN</b><i></i><i></i><i></i><span></span></div><div class="site-hero-ui"><small>EXCELLENCE IN EDUCATION</small><strong>Learning that<br />moves forward.</strong><em></em></div><div class="site-cards"><i></i><i></i><i></i></div></div><span class="display-note">PUBLIC EXPERIENCE / 002</span></div>
+            <div class="project-display website-display" aria-hidden="true"><div class="site-window"><div class="site-nav"><b>SN</b><i></i><i></i><i></i><span></span></div><div class="site-hero-ui"><small>EXCELLENCE IN EDUCATION</small><strong>Learning that<br />moves forward.</strong><em></em></div><div class="site-cards"><i></i><i></i><i></i></div></div><span class="display-note">PUBLIC EXPERIENCE / 002</span>
           </article>
 
           <div class="project-pair">
@@ -157,10 +157,10 @@
               <div class="project-display cli-display" aria-hidden="true">
                 <div class="terminal-window">
                   <div class="terminal-bar"><span></span><span></span><span></span><em>flight-reservation</em></div>
-                  <p><b>&gt;</b> secure session: active</p>
-                  <p><b>&gt;</b> checking seats... <strong>OK</strong></p>
-                  <p><b>&gt;</b> payment request: <strong>verified</strong></p>
-                  <p><b>&gt;</b> booking confirmed<span class="cursor"></span></p>
+                  <p><b>></b> secure session: active</p>
+                  <p><b>></b> checking seats... <strong>OK</strong></p>
+                  <p><b>></b> payment request: <strong>verified</strong></p>
+                  <p><b>></b> booking confirmed<span class="cursor"></span></p>
                 </div>
               </div>
               <div class="project-copy">
@@ -191,24 +191,27 @@
             </article>
           </div>
         </div>
-      </div></section>
+      </section>
 
       <article class="project project-reverse reveal secret">
         <div class="project-copy">
           <div class="project-topline"><span>05</span><span>Systems / CLI</span></div>
           <h3>GitHub Secrets Watcher</h3>
-          <p>A command-line tool that scans GitHub repositories (public and private with token) for accidentally committed environment files (.env, config files with secrets, etc.) in the Git history and reports findings (read-only, no modifications). Features include multi-threaded scanning, configurable output formats (text, JSON, CSV), and direct links to exact commits.</p>
+          <p>A command-line tool that scans GitHub repositories (public and private with token) for accidentally committed environment files (like `.env`, config files with secrets, etc.) in the Git history and reports findings (read-only, no modifications).</p>
           <ul class="project-points">
             <li>Scans public and private repositories (with token) for a given GitHub username</li>
             <li>Checks Git history for environment/configuration files across multiple branches (configurable depth)</li>
-            <li>Excludes common directories (node_modules, .git, dist, etc.) to reduce noise</li>
-            <li>Provides direct links to exact commits where each file appears (URL-encoded for safety)</li>
+            <li>Excludes common directories (like `node_modules`, `.git`, `dist`, etc.) to reduce noise</li>
+            <li>Provides direct links to the exact commit where each file appears (with URL-encoding for safety)</li>
             <li>Validates commit hash format (40 hex characters) to prevent broken links</li>
-            <li>Read-only operations only - performs no modifications to any repositories</li>
+            <li>Read-only operations only - does not modify any repositories</li>
             <li>Optional GitHub token for higher API rate limits and access to private repositories</li>
             <li>Multi-threaded repository scanning for improved performance (configurable thread count)</li>
             <li>Configurable output formats: human-readable text, machine-readable JSON, or CSV</li>
             <li>Colored terminal output for better readability (ANSI colors, Windows VT processing enabled)</li>
+            <li>Memory-efficient stream-based processing</li>
+            <li>Modern C++20 standard</li>
+            <li>Verbose mode for detailed progress tracking during scanning</li>
           </ul>
           <div class="tech-list"><span>C++20</span><span>libcurl</span><span>JSON</span><span>Git</span><span>ANSI Colors</span></div>
           <a class="project-link" href="https://github.com/Gerald-Mathew/github-secrets-watcher" target="_blank" rel="noreferrer">View on GitHub <i data-lucide="arrow-up-right"></i></a>
@@ -216,15 +219,25 @@
         <div class="project-display cli-display" aria-hidden="true">
           <div class="terminal-window">
             <div class="terminal-bar"><span></span><span></span><span></span><em>github-secrets-watcher</em></div>
-            <p><b>></b> Scan initiated for username: Gerald-Mathew</p>
-            <p><b>></b> History depth: 100 commits</p>
-            <p><b>></b> Maximum repos to scan: 5</p>
-            <p><b>></b> Found 7 public repositories to scan.</p>
-            <p><b>></b> [3/7] Scanning: CareConnect-Clinic-Appointment-System</p>
-            <p><b>></b> [WARN] Found 5 potential environment/configuration files:</p>
-            <p><b>></b>     - client/assets/js/config.js</p>
-            <p><b>></b>       [LINK] https://github.com/Gerald-Mathew/CareConnect-Clinic-Appointment-System/blob/...</p>
+            <p><b>></b> github_secrets_watcher scan --username Gerald-Mathew</p>
+            <p><b>></b> [WARN] WARNING: This tool scans public repository history for educational purposes.</p>
+            <p><b>></b>         Only scan repositories you own or have permission to scan.</p>
+            <p><b>></b>         This tool performs read-only operations and does not modify any repositories.</p>
+            <p><b>></b> Do you want to continue? (y/N): y</p>
+            <p><b>></b> [INFO] Scanning public repositories for user: Gerald-Mathew</p>
+            <p><b>></b> [INFO] History depth: 100 commits</p>
+            <p><b>></b> [INFO] Found 7 public repositories to scan.</p>
             <p><b>></b> [INFO] Scan complete!</p>
+            <p><b>></b> Repository: github-secrets-watcher</p>
+            <p><b>></b>   Status: Success</p>
+            <p><b>></b>   No potential environment files found.</p>
+            <p><b>></b> Repository: StudySync</p>
+            <p><b>></b>   Status: Success</p>
+            <p><b>></b>   Found 2 potential environment/configuration files:</p>
+            <p><b>></b>     - client/assets/js/config.js</p>
+            <p><b>></b>       [LINK] https://github.com/Gerald-Mathew/StudySync/blob/94d3ab26b592cbfabf11d1ed23dda493595ad5a1/client%2fassets%2fjs%2fconfig.js</p>
+            <p><b>></b>     - server/src/config</p>
+            <p><b>></b>       [LINK] https://github.com/Gerald-Mathew/StudySync/blob/94d3ab26b592cbfabf11d1ed23dda493595ad5a1/server%2fsrc%2fconfig</p>
           </div>
         </div>
         <span class="display-note">SECURITY TOOL / 005</span>
@@ -235,7 +248,7 @@
         <div class="stack-grid">
           <article class="skill-group reveal"><div class="skill-icon"><i data-lucide="braces"></i></div><h3>Languages</h3><p>C++, Java, Python, JavaScript, HTML, CSS</p></article>
           <article class="skill-group reveal reveal-delay"><div class="skill-icon"><i data-lucide="layers-3"></i></div><h3>Web Engineering</h3><p>Responsive interfaces, semantic HTML, vanilla JavaScript, Node.js, Express, REST APIs</p></article>
-          <article class="skill-group reveal reveal-delay-2"><div class="skill-icon"><i data-lucide="database"></i></div><h3>Data &amp; Security</h3><p>Supabase, PostgreSQL, SQLite, JWT, bcrypt, Argon2id, TOTP</p></article>
+          <article class="skill-group reveal reveal-delay-2"><div class="skill-icon"><i data-lucide="database"></i></div><h3>Data & Security</h3><p>Supabase, PostgreSQL, SQLite, JWT, bcrypt, Argon2id, TOTP</p></article>
           <article class="skill-group reveal reveal-delay-3"><div class="skill-icon"><i data-lucide="rocket"></i></div><h3>Shipping</h3><p>Cloudflare Workers, Render, GitHub, Visual Studio, vcpkg</p></article>
         </div>
       </section>
