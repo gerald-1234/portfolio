@@ -9,7 +9,7 @@
     <meta name="msapplication-TileColor" content="#070a0d">
     <meta name="author" content="Mathew Gerald">
     <meta name="robots" content="index,follow,max-image-preview:large">
-    <meta name="keywords" content="Mathew Gerald, Mathew Gerald Chukwudera, Gerald Mathew, Gerald, Software Engineer, Full-Stack Developer, Web developer, Backend Developer, Frontend Developer, C++, JavaScript, TypeScript, Node.js, Express.js, PostgreSQL, Supabase, HTML, CSS, Git, REST APIs, Portfolio, Resume, Contact, Nigeria, Owerri, FUTO">
+    <meta name="keywords" content="Mathew Gerald, Mathew Gerald Chukwudera, Gerald Mathew, Gerald, Software Engineer, Full-Stack Developer, Web developer, Backend Developer, Frontend Developer, C++, JavaScript, TypeScript, React, Vite, Node.js, Express.js, PostgreSQL, Supabase, HTML, CSS, Git, REST APIs, Portfolio, Resume, Contact, Nigeria, Owerri, FUTO">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mathew Gerald | Software Engineer">
     <meta property="og:description" content="Building fast, scalable and user-focused applications with modern technologies.">
@@ -45,6 +45,8 @@
         "C++",
         "JavaScript",
         "TypeScript",
+        "React",
+        "Vite",
         "Node.js",
         "Express.js",
         "PostgreSQL",
@@ -135,8 +137,8 @@
             <div class="project-copy">
               <div class="project-topline"><span>01</span><span>Web platform / Production</span></div><h3>Sherman Nagel Result Portal</h3>
               <p>Role-based school result infrastructure where teachers enter scores, administrators manage academic records, students redeem secure scratch-card PINs, and anyone can verify a printed result.</p>
-              <ul class="project-points"><li>Secure staff access with JWT cookies, bcrypt, optional TOTP 2FA, account lockout, and session revocation.</li><li>Built for the full result lifecycle: score entry, publishing, analytics, scratch cards, CSV export, guardian emails, and QR verification.</li></ul>
-              <div class="tech-list"><span>HTML/CSS/JS</span><span>Node.js</span><span>Express</span><span>Supabase</span><span>Cloudflare</span></div>
+              <ul class="project-points"><li>Secure staff access with JWT cookies, bcrypt, optional TOTP 2FA, account lockout, and session revocation.</li><li>Built for the full result lifecycle: score entry, publishing, analytics, scratch cards, CSV export, guardian emails, and QR verification.</li><li>Publication-safe placement: a class or arm change that would rewrite already-published results is blocked until the principal explicitly confirms it.</li><li>Transactional end-of-session promotion that reports every student it could not place (missing or unmapped class) instead of silently skipping them.</li></ul>
+              <div class="tech-list"><span>React 18 / Vite</span><span>Node.js</span><span>Express</span><span>Supabase</span><span>Cloudflare</span></div>
               <a class="project-link" href="https://portal.shermannagel.sch.ng" target="_blank" rel="noreferrer">Visit live portal <i data-lucide="arrow-up-right"></i></a>
             </div>
           </article>
@@ -247,8 +249,8 @@
         <div class="section-heading reveal"><p class="section-kicker">03 / TOOLKIT</p><h2>A stack selected for the job at hand.</h2></div>
         <div class="stack-grid">
           <article class="skill-group reveal"><div class="skill-icon"><i data-lucide="braces"></i></div><h3>Languages</h3><p>C++, Java, Python, JavaScript, HTML, CSS</p></article>
-          <article class="skill-group reveal reveal-delay"><div class="skill-icon"><i data-lucide="layers-3"></i></div><h3>Web Engineering</h3><p>Responsive interfaces, semantic HTML, vanilla JavaScript, Node.js, Express, REST APIs</p></article>
-          <article class="skill-group reveal reveal-delay-2"><div class="skill-icon"><i data-lucide="database"></i></div><h3>Data & Security</h3><p>Supabase, PostgreSQL, SQLite, JWT, bcrypt, Argon2id, TOTP</p></article>
+          <article class="skill-group reveal reveal-delay"><div class="skill-icon"><i data-lucide="layers-3"></i></div><h3>Web Engineering</h3><p>Responsive interfaces, semantic HTML, React 18, Vite, vanilla JavaScript, Node.js, Express, REST APIs</p></article>
+          <article class="skill-group reveal reveal-delay-2"><div class="skill-icon"><i data-lucide="database"></i></div><h3>Data & Security</h3><p>Supabase (RLS), PostgreSQL functions & migrations, SQLite, JWT, bcrypt, Argon2id, TOTP</p></article>
           <article class="skill-group reveal reveal-delay-3"><div class="skill-icon"><i data-lucide="rocket"></i></div><h3>Shipping</h3><p>Cloudflare Workers, Render, GitHub, Visual Studio, vcpkg</p></article>
         </div>
       </section>
