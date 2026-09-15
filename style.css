@@ -1067,6 +1067,227 @@ a.project-link:hover svg {
   font-size: 8px;
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.project-links .project-link {
+  position: relative;
+}
+
+.project-links .project-link + .project-link::before {
+  content: "/";
+  position: absolute;
+  left: -17px;
+  color: var(--dim);
+  font-weight: 400;
+}
+
+/* StudySync course-registration mockup */
+.studysync-display {
+  background: #0d1419;
+}
+
+.course-window {
+  width: 84%;
+  min-height: 200px;
+  overflow: hidden;
+  border: 1px solid #4a5b6e;
+  background: #eef0f4;
+  box-shadow: -15px 17px 0 #172028;
+  transform: rotate(-2deg);
+}
+
+.course-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 32px;
+  padding: 0 12px;
+  background: #2b3a52;
+}
+
+.course-top span {
+  color: #a7c4f2;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.course-top i {
+  width: 20px;
+  height: 4px;
+  background: #5c708f;
+}
+
+.course-top em {
+  width: 9px;
+  height: 9px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: #c6ea74;
+}
+
+.course-body {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  min-height: 148px;
+}
+
+.course-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 13px 9px;
+  border-right: 1px solid #cdd4de;
+  background: #dfe4ec;
+}
+
+.course-side i {
+  height: 6px;
+  background: #93a3bd;
+}
+
+.course-side i:first-child {
+  background: #4f6aa7;
+}
+
+.course-side i:last-child {
+  height: 28px;
+  margin-top: auto;
+  background: #4f6aa7;
+  opacity: 0.35;
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 12px;
+}
+
+.course-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px;
+  border: 1px solid #d3d9e2;
+  background: #fbfbfd;
+}
+
+.course-list b {
+  color: #24334d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.course-list em {
+  color: #7d8796;
+  font-family: var(--mono);
+  font-size: 8px;
+  font-style: normal;
+  text-align: right;
+}
+
+.course-list div:nth-child(2) em {
+  color: #4f6aa7;
+}
+
+/* CareConnect clinic-schedule mockup */
+.careconnect-display {
+  background: #0e1215;
+}
+
+.clinic-window {
+  width: 82%;
+  min-height: 214px;
+  overflow: hidden;
+  border: 1px solid #4d6a66;
+  background: #f6f4ee;
+  box-shadow: 17px -17px 0 #192021;
+  transform: rotate(2deg);
+}
+
+.clinic-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 32px;
+  padding: 0 12px;
+  background: #22413f;
+}
+
+.clinic-top span {
+  color: #7fd6c4;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.clinic-top i {
+  width: 20px;
+  height: 4px;
+  background: #3d6360;
+}
+
+.clinic-top em {
+  width: 9px;
+  height: 9px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: #e88a6c;
+}
+
+.clinic-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 13px;
+}
+
+.clinic-slot {
+  display: grid;
+  grid-template-columns: 34px 46px 1fr 9px;
+  align-items: center;
+  gap: 10px;
+  padding: 9px;
+  border: 1px solid #e5ddd1;
+  background: #fffdf8;
+}
+
+.clinic-slot small {
+  color: #b06b55;
+  font-family: var(--mono);
+  font-size: 8px;
+}
+
+.clinic-slot b {
+  color: #28403e;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.clinic-slot em {
+  color: #7a8078;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.clinic-slot i {
+  height: 8px;
+  background: #f2b26b;
+}
+
+.clinic-slot:first-child i {
+  background: #e37157;
+}
+
 .stack {
   border-bottom: 1px solid var(--line);
 }
