@@ -1,0 +1,11 @@
+# OS and editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local tooling
+node_modules/
+.netlify/
+
+# Logs
+*.log
