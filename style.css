@@ -1330,15 +1330,31 @@ a.project-link:hover svg {
 }
 
 .skill-group h3 {
-  margin: 43px 0 10px;
+  margin: 43px 0 17px;
   font-size: 20px;
 }
 
-.skill-group p {
-  margin: 0;
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  padding: 6px 8px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.skill-tags i {
+  color: var(--cyan);
+  font-size: 16px;
 }
 
 .availability {
