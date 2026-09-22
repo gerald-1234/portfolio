@@ -163,7 +163,7 @@ button {
   color: var(--text);
 }
 
-.nav-cta svg {
+.nav-cta .icon {
   width: 15px;
 }
 
@@ -178,7 +178,7 @@ button {
   background: var(--ink-soft);
 }
 
-.menu-toggle svg {
+.menu-toggle .icon {
   width: 20px;
 }
 
@@ -267,7 +267,7 @@ button {
     border-color 180ms ease;
 }
 
-.button svg {
+.button .icon {
   width: 18px;
 }
 
@@ -693,11 +693,21 @@ button {
 }
 
 .tech-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   border: 1px solid var(--line);
   padding: 5px 8px;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 11px;
+}
+
+.tech-list .icon,
+.ticker-track .icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
 }
 
 .project-link {
@@ -709,12 +719,12 @@ button {
   font-weight: 800;
 }
 
-.project-link svg {
+.project-link .icon {
   width: 17px;
   transition: transform 160ms ease;
 }
 
-a.project-link:hover svg {
+a.project-link:hover .icon {
   transform: translate(3px, -3px);
 }
 
@@ -1325,7 +1335,7 @@ a.project-link:hover svg {
   color: var(--cyan);
 }
 
-.skill-icon svg {
+.skill-icon .icon {
   width: 19px;
 }
 
@@ -1352,9 +1362,9 @@ a.project-link:hover svg {
   line-height: 1.2;
 }
 
-.skill-tags i {
-  color: var(--cyan);
-  font-size: 16px;
+.skill-tags .icon {
+  width: 16px;
+  height: 16px;
 }
 
 .availability {
@@ -1426,7 +1436,7 @@ a.project-link:hover svg {
   color: var(--cyan);
 }
 
-.contact-option > span svg {
+.contact-option > span .icon {
   width: 17px;
 }
 
@@ -1445,9 +1455,34 @@ a.project-link:hover svg {
   white-space: nowrap;
 }
 
-.contact-option > svg {
+.contact-option > .icon {
   width: 18px;
   color: var(--cyan);
+}
+
+.icon[src$="/arrow-up-right.svg"],
+.icon[src$="/arrow-down-right.svg"],
+.icon[src$="/send.svg"],
+.icon[src$="/construction.svg"],
+.icon[src$="/braces.svg"],
+.icon[src$="/layers-3.svg"],
+.icon[src$="/database.svg"],
+.icon[src$="/rocket.svg"],
+.icon[src$="/shield-check.svg"],
+.icon[src$="/mail.svg"],
+.icon[src$="/phone.svg"],
+.icon[src$="/menu.svg"],
+.icon[src$="/x.svg"],
+.icon[src$="/supabase-plain.svg"],
+.icon[src$="/express-original.svg"],
+.icon[src$="/github-original.svg"],
+.icon[src$="/git-plain.svg"],
+.icon[src$="/windows8-original.svg"],
+.icon[src$="/vitejs-plain.svg"],
+.icon[src$="/cloudflare-plain.svg"],
+.icon[src$="/sqlite-plain.svg"],
+.icon[src$="/linux-plain.svg"] {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(35%) saturate(1000%) hue-rotate(137deg) brightness(92%) contrast(88%);
 }
 
 .contact-form {

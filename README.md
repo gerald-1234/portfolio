@@ -55,7 +55,9 @@ A hand-built, dependency-light portfolio site. No frameworks and no build step: 
 ├── robots.txt              # crawler policy
 ├── sitemap.xml             # single-page sitemap
 ├── site.webmanifest        # PWA metadata
-└── images/                 # favicons, app icons and hero photo
+└── assets/
+  ├── icons/            # local UI and technology SVG icons
+  └── images/           # favicons, app icons and hero photo
 ```
 
 ## Run locally

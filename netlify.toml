@@ -20,17 +20,17 @@
     Content-Type = "application/manifest+json"
 
 [[headers]]
-  for = "/favicon.ico"
+  for = "/assets/images/favicon.ico"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/*.png"
+  for = "/assets/images/*.png"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/*.jpg"
+  for = "/assets/images/*.jpg"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

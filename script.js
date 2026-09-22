@@ -7,8 +7,6 @@
   const progress = document.querySelector('.scroll-progress span');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const navLinks = document.querySelector('[data-nav-links]');
-  const renderIcons = () => window.lucide?.createIcons();
-
   const updateScrollState = () => {
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
     const percentage = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
@@ -23,8 +21,7 @@
     const isOpen = navLinks.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-    menuToggle.innerHTML = `<i data-lucide="${isOpen ? 'x' : 'menu'}"></i>`;
-    renderIcons();
+    menuToggle.innerHTML = `<img class="icon" src="assets/icons/${isOpen ? 'x' : 'menu'}.svg" alt="" aria-hidden="true" />`;
   });
 
   navLinks.querySelectorAll('a').forEach((link) => {
@@ -32,8 +29,7 @@
       navLinks.classList.remove('is-open');
       menuToggle.setAttribute('aria-expanded', 'false');
       menuToggle.setAttribute('aria-label', 'Open navigation');
-      menuToggle.innerHTML = '<i data-lucide="menu"></i>';
-      renderIcons();
+      menuToggle.innerHTML = '<img class="icon" src="assets/icons/menu.svg" alt="" aria-hidden="true" />';
     });
   });
 
@@ -136,5 +132,4 @@
 
   setCanvasSize();
   draw();
-  renderIcons();
 })();
