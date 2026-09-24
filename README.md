@@ -39,7 +39,7 @@ A hand-built, dependency-light portfolio site. No frameworks and no build step: 
 | Markup | Hand-written HTML5 | Full control, zero build tooling |
 | Styling | Modern CSS (custom properties, grid, flexbox) | No preprocessor needed |
 | Behaviour | Vanilla JavaScript | Small, fast, no runtime dependencies |
-| Icons | [Lucide](https://lucide.dev/) via CDN | Crisp SVG icons |
+| Icons | Self-hosted SVG icons | Crisp SVG icons, no CDN dependency |
 | Hosting | Netlify | Static hosting, security headers and redirects as code |
 
 ## Project structure
@@ -49,15 +49,15 @@ A hand-built, dependency-light portfolio site. No frameworks and no build step: 
 ├── index.html              # one-page portfolio
 ├── thanks.html             # form confirmation page
 ├── 404.html                # custom not-found page
-├── script.js               # scroll state, menu, reveal animations, canvas
-├── style.css               # design tokens and layout
 ├── netlify.toml            # headers, redirects and cache policy
 ├── robots.txt              # crawler policy
 ├── sitemap.xml             # single-page sitemap
 ├── site.webmanifest        # PWA metadata
 └── assets/
+  ├── style.css         # design tokens and layout
+  ├── script.js         # scroll state, menu, reveal animations, canvas
   ├── icons/            # local UI and technology SVG icons
-  └── images/           # favicons, app icons and hero photo
+  └── images/           # favicons and app icons
 ```
 
 ## Run locally
@@ -84,7 +84,7 @@ Pushing to the default branch triggers a deploy.
 
 ## Performance notes
 
-The hero photograph is pre-scaled to a 1400 px long edge and compressed (roughly 220 KB, down from over 3 MB). The particle canvas caps its device-pixel ratio at 2 and stops animating entirely when the visitor prefers reduced motion.
+The particle canvas caps its device-pixel ratio at 2 and stops animating entirely when the visitor prefers reduced motion, so the page stays light even with the full animation layer enabled.
 
 ## License
 

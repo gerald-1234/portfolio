@@ -214,8 +214,7 @@ button {
   color: var(--muted);
 }
 
-.live-dot,
-.tag-dot {
+.live-dot {
   width: 7px;
   height: 7px;
   background: var(--lime);
@@ -340,60 +339,128 @@ button {
   font-size: 11px;
 }
 
-.photo-stage {
+.profile-card {
   position: relative;
-  aspect-ratio: 0.8;
+  display: flex;
+  flex-direction: column;
+  min-height: 470px;
   border: 1px solid var(--line-bright);
-  padding: 10px;
-  background: #0b1014;
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(103, 219, 228, 0.06), transparent 34%),
+    #0b1014;
   overflow: hidden;
 }
 
-.photo-stage img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  filter: contrast(1.08) saturate(0.86);
-}
-
-.photo-stage::after {
+.profile-card::after {
   position: absolute;
   content: "";
   inset: 10px;
-  border: 1px solid rgba(197, 238, 116, 0.44);
+  border: 1px solid rgba(197, 238, 116, 0.3);
   pointer-events: none;
 }
 
-.photo-scan {
+.profile-card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.profile-badge {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 30px;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.profile-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.profile-card-main {
+  position: relative;
+  z-index: 1;
+  margin-top: 58px;
+}
+
+.profile-role {
+  margin: 0;
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.profile-name {
+  margin: 12px 0 14px;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.profile-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.profile-facts {
+  position: relative;
+  z-index: 1;
+  margin: 30px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.profile-facts div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-facts dt {
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.profile-facts dd {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-align: right;
+}
+
+.profile-scan {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
   left: 10px;
+  right: 10px;
   height: 2px;
   background: var(--lime);
   opacity: 0.8;
   box-shadow: 0 0 17px rgba(197, 238, 116, 0.75);
-  animation: scanPhoto 5s linear infinite;
+  animation: scanLine 6s linear infinite;
 }
 
-.photo-bracket {
-  position: absolute;
-  z-index: 1;
-  width: 52px;
-  height: 52px;
-  border-color: var(--cyan);
-  border-style: solid;
-}
-
-.photo-bracket-top {
-  top: -9px;
-  left: -9px;
-  border-width: 2px 0 0 2px;
-}
-
-.photo-tag {
+.profile-tag {
   position: absolute;
   z-index: 2;
   right: 11px;
@@ -1474,6 +1541,8 @@ a.project-link:hover .icon {
 .icon[src$="/menu.svg"],
 .icon[src$="/x.svg"],
 .icon[src$="/supabase-plain.svg"],
+.icon[src$="/docker-plain.svg"],
+.icon[src$="/devdotto.svg"],
 .icon[src$="/express-original.svg"],
 .icon[src$="/github-original.svg"],
 .icon[src$="/git-plain.svg"],
@@ -1689,7 +1758,7 @@ a.project-link:hover .icon {
   }
 }
 
-@keyframes scanPhoto {
+@keyframes scanLine {
   0% {
     transform: translateY(0);
     opacity: 0;
@@ -1918,7 +1987,7 @@ a.project-link:hover .icon {
     width: min(100%, 370px);
   }
 
-  .photo-tag {
+  .profile-tag {
     right: 11px;
     bottom: 21px;
   }
