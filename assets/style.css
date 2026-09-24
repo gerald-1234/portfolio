@@ -503,13 +503,13 @@ button {
 }
 
 .signal-corner-one {
-  top: 57px;
+  top: 32px;
   right: 0;
   border-width: 1px 1px 0 0;
 }
 
 .signal-corner-two {
-  bottom: 59px;
+  bottom: 67px;
   left: 0;
   border-width: 0 0 1px 1px;
 }
@@ -2134,5 +2134,20 @@ a.project-link:hover .icon {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .ticker-track {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0 4px;
+    min-height: 0;
+    padding: 18px 0;
+    animation: none;
+  }
+
+  .ticker-track > :nth-child(n+13) {
+    display: none;
   }
 }
