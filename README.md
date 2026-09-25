@@ -60,7 +60,14 @@ A hand-built, dependency-light portfolio site. No frameworks and no build step: 
   └── images/           # MGC monogram, favicons and app icons
 ```
 
-The favicon set is generated from a single source of truth, `assets/images/mgc-monogram.svg` — a dark rounded square with the teal `MGC` initials. The `MGC` letterforms are stored as vector paths rather than live text, so the monogram needs no web font and renders identically in every browser and at every size. `favicon.ico` and the PNG sizes are rasterised from that same file, and `banner.svg` inlines the same paths.
+The favicon set is generated from a single source of truth, `assets/images/mgc-monogram.svg` — a dark rounded square with the teal `MGC` initials. The letterforms are stored as vector paths taken from Manrope ExtraBold rather than live text, so the monogram needs no web font and renders identically in every browser and at every size. `banner.svg` inlines the same paths, and the PNG sizes are rasterised from the same outlines.
+
+Two lockups are used, because three letters collapse into a smudge at small sizes:
+
+- `MGC` for `mgc-monogram.svg`, the Apple touch icon, the Android icons and the banner.
+- `MG` for `favicon.ico` and the 16px/32px PNGs, which lifts the cap height at 32px from 6.9px to 9.7px.
+
+Tab and bookmark icons keep rounded corners with transparent edges; the Apple and Android icons are full-bleed squares so iOS and Android can apply their own mask.
 
 ## Run locally
 

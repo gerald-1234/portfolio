@@ -21,7 +21,7 @@
     const isOpen = navLinks.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-    menuToggle.innerHTML = `<img class="icon" src="assets/icons/${isOpen ? 'x' : 'menu'}.svg" alt="" aria-hidden="true" />`;
+    menuToggle.innerHTML = `<img class="icon" src="/assets/icons/${isOpen ? 'x' : 'menu'}.svg" alt="" aria-hidden="true" />`;
   });
 
   navLinks.querySelectorAll('a').forEach((link) => {
@@ -29,7 +29,7 @@
       navLinks.classList.remove('is-open');
       menuToggle.setAttribute('aria-expanded', 'false');
       menuToggle.setAttribute('aria-label', 'Open navigation');
-      menuToggle.innerHTML = '<img class="icon" src="assets/icons/menu.svg" alt="" aria-hidden="true" />';
+      menuToggle.innerHTML = '<img class="icon" src="/assets/icons/menu.svg" alt="" aria-hidden="true" />';
     });
   });
 
