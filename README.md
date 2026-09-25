@@ -57,8 +57,10 @@ A hand-built, dependency-light portfolio site. No frameworks and no build step: 
   ├── style.css         # design tokens and layout
   ├── script.js         # scroll state, menu, reveal animations, canvas
   ├── icons/            # local UI and technology SVG icons
-  └── images/           # favicons and app icons
+  └── images/           # MGC monogram, favicons and app icons
 ```
+
+The favicon set is generated from a single source of truth, `assets/images/mgc-monogram.svg` — a dark rounded square with the teal `MGC` initials. The `MGC` letterforms are stored as vector paths rather than live text, so the monogram needs no web font and renders identically in every browser and at every size. `favicon.ico` and the PNG sizes are rasterised from that same file, and `banner.svg` inlines the same paths.
 
 ## Run locally
 
