@@ -10,10 +10,13 @@
     <meta name="author" content="Mathew Gerald">
     <meta name="robots" content="index,follow,max-image-preview:large">
     <meta name="keywords" content="Mathew Gerald, Mathew Gerald Chukwudera, Gerald Mathew, Gerald, Software Engineer, Full-Stack Developer, Web developer, Backend Developer, Frontend Developer, C++, JavaScript, TypeScript, React, Vite, Node.js, Express.js, PostgreSQL, Supabase, SQLite, Docker, Containers, HTML, CSS, Git, REST APIs, Portfolio, Resume, Contact, Nigeria, Owerri, FUTO">
+    <meta property="og:site_name" content="Mathew Gerald">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mathew Gerald | Software Engineer">
     <meta property="og:description" content="Building fast, scalable and user-focused applications with modern technologies.">
     <meta property="og:url" content="https://gerald-mathew.netlify.app/">
+    <meta name="application-name" content="Mathew Gerald">
+    <meta name="apple-mobile-web-app-title" content="Mathew Gerald">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Mathew Gerald | Software Engineer">
     <meta name="twitter:description" content="Building fast, scalable and user-focused applications with modern technologies.">
@@ -31,29 +34,58 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://gerald-mathew.netlify.app/#person",
-      "name": "Mathew Gerald",
-      "url": "https://gerald-mathew.netlify.app/",
-      "jobTitle": "Full-Stack Web Developer",
-      "description": "Full-stack web developer building fast, scalable, and user-focused web applications with modern technologies.",
-      "email": "mailto:mathewgerald.14@gmail.com",
-      "sameAs": [ "https://github.com/gerald-mathew", "https://dev.to/gerald-mathew" ],
-      "knowsAbout": [
-        "C++",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Vite",
-        "Node.js",
-        "Express.js",
-        "PostgreSQL",
-        "Supabase",
-        "Docker",
-        "HTML",
-        "CSS",
-        "Git",
-        "REST APIs"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://gerald-mathew.netlify.app/#website",
+          "url": "https://gerald-mathew.netlify.app/",
+          "name": "Mathew Gerald",
+          "alternateName": [
+            "Mathew Gerald Chukwudera",
+            "Gerald Mathew",
+            "MGC",
+            "Mathew Gerald Portfolio"
+          ],
+          "inLanguage": "en",
+          "publisher": { "@id": "https://gerald-mathew.netlify.app/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://gerald-mathew.netlify.app/#profilepage",
+          "url": "https://gerald-mathew.netlify.app/",
+          "name": "Mathew Gerald | Software Engineer",
+          "isPartOf": { "@id": "https://gerald-mathew.netlify.app/#website" },
+          "about": { "@id": "https://gerald-mathew.netlify.app/#person" },
+          "mainEntity": { "@id": "https://gerald-mathew.netlify.app/#person" },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://gerald-mathew.netlify.app/#person",
+          "name": "Mathew Gerald Chukwudera",
+          "alternateName": [ "Mathew Gerald", "Gerald Mathew", "MGC" ],
+          "url": "https://gerald-mathew.netlify.app/",
+          "jobTitle": "Full-Stack Web Developer",
+          "description": "Full-stack web developer building fast, scalable, and user-focused web applications with modern technologies.",
+          "email": "mailto:mathewgerald.14@gmail.com",
+          "sameAs": [ "https://github.com/gerald-mathew", "https://dev.to/gerald-mathew" ],
+          "knowsAbout": [
+            "C++",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Vite",
+            "Node.js",
+            "Express.js",
+            "PostgreSQL",
+            "Supabase",
+            "Docker",
+            "HTML",
+            "CSS",
+            "Git",
+            "REST APIs"
+          ]
+        }
       ]
     }
     </script>
