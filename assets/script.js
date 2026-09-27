@@ -56,12 +56,41 @@
   const context = canvas.getContext('2d');
   const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pointer = { x: -1000, y: -1000 };
+  const gridSize = 64;
+  const frameInterval = 1000 / 30;
+  const gridCanvas = document.createElement('canvas');
+  const gridContext = gridCanvas.getContext('2d');
   let width = 0;
   let height = 0;
+  let scale = 1;
   let particles = [];
+  let lastFrame = 0;
+  let frameHandle = 0;
+
+  const paintGrid = () => {
+    gridCanvas.width = (width + gridSize) * scale;
+    gridCanvas.height = (height + gridSize) * scale;
+    const grid = gridContext;
+    grid.setTransform(scale, 0, 0, scale, 0, 0);
+    grid.clearRect(0, 0, width + gridSize, height + gridSize);
+    grid.lineWidth = 1;
+    grid.strokeStyle = 'rgba(106, 154, 166, 0.08)';
+    for (let x = 0; x <= width + gridSize; x += gridSize) {
+      grid.beginPath();
+      grid.moveTo(x, 0);
+      grid.lineTo(x, height + gridSize);
+      grid.stroke();
+    }
+    for (let y = 0; y <= height + gridSize; y += gridSize) {
+      grid.beginPath();
+      grid.moveTo(0, y);
+      grid.lineTo(width + gridSize, y);
+      grid.stroke();
+    }
+  };
 
   const setCanvasSize = () => {
-    const scale = Math.min(window.devicePixelRatio || 1, 2);
+    scale = Math.min(window.devicePixelRatio || 1, 2);
     width = window.innerWidth;
     height = window.innerHeight;
     canvas.width = width * scale;
@@ -75,53 +104,52 @@
       size: 1 + Math.random() * 1.4,
       offset: Math.random() * Math.PI * 2
     }));
+    paintGrid();
   };
 
   const draw = (time = 0) => {
-    context.clearRect(0, 0, width, height);
-    context.lineWidth = 1;
-    context.strokeStyle = 'rgba(106, 154, 166, 0.08)';
-    const gridSize = 64;
-    const drift = (time * 0.008) % gridSize;
+    frameHandle = 0;
+    if (document.hidden) return;
 
-    for (let x = -gridSize; x < width + gridSize; x += gridSize) {
-      context.beginPath();
-      context.moveTo(x + drift, 0);
-      context.lineTo(x + drift, height);
-      context.stroke();
+    if (motionReduced || time - lastFrame >= frameInterval) {
+      lastFrame = time;
+      const drift = (time * 0.008) % gridSize;
+
+      context.clearRect(0, 0, width, height);
+      context.drawImage(gridCanvas, -drift, -drift, width + gridSize, height + gridSize);
+
+      particles.forEach((particle, index) => {
+        particle.y -= particle.speed;
+        particle.x += Math.sin(time * 0.0004 + particle.offset) * 0.12;
+        if (particle.y < -10) {
+          particle.y = height + 10;
+          particle.x = Math.random() * width;
+        }
+        const distance = Math.hypot(pointer.x - particle.x, pointer.y - particle.y);
+        const highlighted = distance < 150;
+        context.fillStyle = highlighted
+          ? 'rgba(197, 238, 116, 0.92)'
+          : index % 4 === 0
+            ? 'rgba(103, 219, 228, 0.6)'
+            : 'rgba(151, 175, 177, 0.32)';
+        context.fillRect(particle.x, particle.y, particle.size, particle.size);
+        if (highlighted) {
+          context.strokeStyle = `rgba(103, 219, 228, ${0.3 - distance / 620})`;
+          context.beginPath();
+          context.moveTo(particle.x, particle.y);
+          context.lineTo(pointer.x, pointer.y);
+          context.stroke();
+        }
+      });
     }
-    for (let y = -gridSize; y < height + gridSize; y += gridSize) {
-      context.beginPath();
-      context.moveTo(0, y + drift);
-      context.lineTo(width, y + drift);
-      context.stroke();
-    }
 
-    particles.forEach((particle, index) => {
-      particle.y -= particle.speed;
-      particle.x += Math.sin(time * 0.0004 + particle.offset) * 0.12;
-      if (particle.y < -10) {
-        particle.y = height + 10;
-        particle.x = Math.random() * width;
-      }
-      const distance = Math.hypot(pointer.x - particle.x, pointer.y - particle.y);
-      const highlighted = distance < 150;
-      context.fillStyle = highlighted
-        ? 'rgba(197, 238, 116, 0.92)'
-        : index % 4 === 0
-          ? 'rgba(103, 219, 228, 0.6)'
-          : 'rgba(151, 175, 177, 0.32)';
-      context.fillRect(particle.x, particle.y, particle.size, particle.size);
-      if (highlighted) {
-        context.strokeStyle = `rgba(103, 219, 228, ${0.3 - distance / 620})`;
-        context.beginPath();
-        context.moveTo(particle.x, particle.y);
-        context.lineTo(pointer.x, pointer.y);
-        context.stroke();
-      }
-    });
+    if (!motionReduced) frameHandle = requestAnimationFrame(draw);
+  };
 
-    if (!motionReduced) requestAnimationFrame(draw);
+  const resume = () => {
+    if (motionReduced || frameHandle || document.hidden) return;
+    lastFrame = 0;
+    frameHandle = requestAnimationFrame(draw);
   };
 
   window.addEventListener('resize', setCanvasSize, { passive: true });
@@ -129,6 +157,14 @@
     pointer.x = event.clientX;
     pointer.y = event.clientY;
   }, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && frameHandle) {
+      cancelAnimationFrame(frameHandle);
+      frameHandle = 0;
+    } else {
+      resume();
+    }
+  });
 
   setCanvasSize();
   draw();
