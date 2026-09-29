@@ -52,6 +52,57 @@
     element.textContent = new Date().getFullYear();
   });
 
+  const tickerTrack = document.querySelector('[data-ticker]');
+  if (tickerTrack) {
+    const tickerRun = tickerTrack.querySelector('.ticker-run');
+    const reduceQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const pxPerSecond = 50;
+    let frame = 0;
+
+    const buildTicker = () => {
+      tickerTrack.querySelectorAll('.ticker-run[data-clone]').forEach((clone) => clone.remove());
+
+      if (reduceQuery.matches) {
+        tickerTrack.classList.remove('is-animated');
+        tickerTrack.style.removeProperty('--ticker-shift');
+        tickerTrack.style.removeProperty('--ticker-duration');
+        tickerRun.style.removeProperty('width');
+        return;
+      }
+
+      tickerRun.style.removeProperty('width');
+      const unit = Math.ceil(tickerRun.getBoundingClientRect().width);
+      if (!unit) return;
+
+      tickerRun.style.width = `${unit}px`;
+      const copies = Math.max(2, Math.ceil((window.innerWidth * 2) / unit) + 1);
+      for (let index = 1; index < copies; index += 1) {
+        const clone = tickerRun.cloneNode(true);
+        clone.dataset.clone = '';
+        clone.setAttribute('aria-hidden', 'true');
+        tickerTrack.appendChild(clone);
+      }
+
+      tickerTrack.style.setProperty('--ticker-shift', `${-unit}px`);
+      tickerTrack.style.setProperty('--ticker-duration', `${(unit / pxPerSecond).toFixed(2)}s`);
+      tickerTrack.classList.remove('is-animated');
+      void tickerTrack.offsetWidth;
+      tickerTrack.classList.add('is-animated');
+    };
+
+    const scheduleTicker = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(buildTicker);
+    };
+
+    window.addEventListener('resize', scheduleTicker, { passive: true });
+    reduceQuery.addEventListener('change', scheduleTicker);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scheduleTicker, () => {});
+    }
+    buildTicker();
+  }
+
   const canvas = document.querySelector('.signal-field');
   const context = canvas.getContext('2d');
   const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

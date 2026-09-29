@@ -566,18 +566,40 @@ button {
   align-items: center;
   width: max-content;
   min-height: 56px;
-  animation: tickerMove 32s linear infinite;
+  will-change: transform;
 }
 
-.ticker-track span {
+.ticker-track.is-animated {
+  animation: tickerMove var(--ticker-duration, 32s) linear infinite;
+}
+
+.ticker-run {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.ticker-pair {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.ticker-pair > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin: 0 18px;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.ticker-track b {
+.ticker-pair > b {
   display: block;
+  flex: 0 0 auto;
   width: 5px;
   height: 5px;
   background: var(--cyan);
@@ -1821,7 +1843,7 @@ a.project-link:hover .icon {
 
 @keyframes tickerMove {
   to {
-    transform: translateX(-50%);
+    transform: translate3d(var(--ticker-shift, -50%), 0, 0);
   }
 }
 
@@ -2178,43 +2200,47 @@ a.project-link:hover .icon {
   }
 
   .ticker-track {
-    --ticker-sep: 3px;
-    --ticker-dot: 5px;
-    --ticker-sep-gap: 15px;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 20px 0;
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 16px 0;
     min-height: 0;
-    padding: 22px 0;
+    padding: 30px 20px;
     animation: none;
+    will-change: auto;
   }
 
-  .ticker-track > :nth-child(n+13),
-  .ticker-track > b {
+  .ticker-run {
+    display: contents;
+  }
+
+  .ticker-run[data-clone] {
     display: none;
   }
 
-  .ticker-track > span {
-    position: relative;
-    margin: 0 calc((var(--ticker-sep-gap) - var(--ticker-sep)) / 2);
-    padding-left: calc(var(--ticker-sep) + var(--ticker-dot) + var(--ticker-sep-gap));
-    white-space: nowrap;
+  .ticker-pair {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
   }
 
-  .ticker-track > span::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: var(--ticker-sep);
-    width: var(--ticker-dot);
-    height: var(--ticker-dot);
-    background: var(--cyan);
-    transform: translateY(-50%);
+  .ticker-pair > span {
+    margin: 0;
   }
 
-  .ticker-track > span:first-of-type::before {
-    content: none;
+  .ticker-pair > span:first-child {
+    justify-self: end;
+  }
+
+  .ticker-pair > b {
+    justify-self: center;
+    align-self: center;
+    margin: 0 18px;
+  }
+
+  .ticker-pair > span:last-child {
+    justify-self: start;
   }
 }
