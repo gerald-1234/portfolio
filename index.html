@@ -23,6 +23,7 @@
     <link rel="preload" href="/assets/fonts/manrope-var.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/style.css" />
+    <script src="/assets/theme.js"></script>
     <link rel="icon" type="image/svg+xml" href="/assets/images/mgc-monogram.svg">
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
@@ -99,7 +100,15 @@
         <a class="brand" href="#top">
           <span class="brand-mark">MGC</span><span class="brand-name">Mathew Gerald</span>
         </a>
-        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links" data-menu-toggle><img class="icon" src="/assets/icons/menu.svg" alt="" aria-hidden="true" /></button>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" aria-label="Theme: Auto. Activate to switch theme." title="Theme: Auto" data-theme-toggle data-theme-state="auto">
+            <img class="icon theme-icon theme-icon-auto" src="/assets/icons/monitor.svg" alt="" aria-hidden="true" />
+            <img class="icon theme-icon theme-icon-light" src="/assets/icons/sun.svg" alt="" aria-hidden="true" />
+            <img class="icon theme-icon theme-icon-dark" src="/assets/icons/moon.svg" alt="" aria-hidden="true" />
+            <span class="theme-label" aria-hidden="true">Auto</span>
+          </button>
+          <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links" data-menu-toggle><img class="icon" src="/assets/icons/menu.svg" alt="" aria-hidden="true" /></button>
+        </div>
         <div class="nav-links" id="nav-links" data-nav-links>
           <a href="#about">About</a><a href="#work">Work</a><a href="#stack">Stack</a><a href="#contact">Contact</a>
           <a class="nav-cta" href="mailto:mathewgerald.14@gmail.com">Start a conversation <img class="icon" src="/assets/icons/arrow-up-right.svg" alt="" aria-hidden="true" /></a>

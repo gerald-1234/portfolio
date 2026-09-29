@@ -117,6 +117,34 @@
   let particles = [];
   let lastFrame = 0;
   let frameHandle = 0;
+  let palette = null;
+  let probe = null;
+
+  const resolveColor = (value) => {
+    if (!probe) {
+      probe = document.createElement('span');
+      probe.setAttribute('aria-hidden', 'true');
+      probe.style.cssText = 'position:absolute;left:-9999px;width:0;height:0;overflow:hidden;';
+      document.body.appendChild(probe);
+    }
+    probe.style.color = value;
+    return getComputedStyle(probe).color;
+  };
+
+  const readPalette = () => {
+    const styles = getComputedStyle(document.documentElement);
+    const read = (name, fallback) =>
+      resolveColor((styles.getPropertyValue(name) || fallback).trim());
+    palette = {
+      grid: read('--canvas-grid', 'rgba(106, 154, 166, 0.08)'),
+      node: read('--canvas-node', 'rgba(151, 175, 177, 0.32)'),
+      accent: read('--canvas-node-accent', 'rgba(103, 219, 228, 0.6)'),
+      hot: read('--canvas-node-hot', 'rgba(197, 238, 116, 0.92)'),
+      link: (read('--canvas-link', 'rgb(103, 219, 228)').match(/[\d.]+/g) || ['103', '219', '228'])
+        .slice(0, 3)
+        .join(', ')
+    };
+  };
 
   const paintGrid = () => {
     gridCanvas.width = (width + gridSize) * scale;
@@ -125,7 +153,7 @@
     grid.setTransform(scale, 0, 0, scale, 0, 0);
     grid.clearRect(0, 0, width + gridSize, height + gridSize);
     grid.lineWidth = 1;
-    grid.strokeStyle = 'rgba(106, 154, 166, 0.08)';
+    grid.strokeStyle = palette.grid;
     for (let x = 0; x <= width + gridSize; x += gridSize) {
       grid.beginPath();
       grid.moveTo(x, 0);
@@ -179,13 +207,13 @@
         const distance = Math.hypot(pointer.x - particle.x, pointer.y - particle.y);
         const highlighted = distance < 150;
         context.fillStyle = highlighted
-          ? 'rgba(197, 238, 116, 0.92)'
+          ? palette.hot
           : index % 4 === 0
-            ? 'rgba(103, 219, 228, 0.6)'
-            : 'rgba(151, 175, 177, 0.32)';
+            ? palette.accent
+            : palette.node;
         context.fillRect(particle.x, particle.y, particle.size, particle.size);
         if (highlighted) {
-          context.strokeStyle = `rgba(103, 219, 228, ${0.3 - distance / 620})`;
+          context.strokeStyle = `rgba(${palette.link}, ${0.3 - distance / 620})`;
           context.beginPath();
           context.moveTo(particle.x, particle.y);
           context.lineTo(pointer.x, pointer.y);
@@ -217,6 +245,13 @@
     }
   });
 
+  document.addEventListener('themechange', () => {
+    readPalette();
+    paintGrid();
+    draw();
+  });
+
+  readPalette();
   setCanvasSize();
   draw();
 })();
