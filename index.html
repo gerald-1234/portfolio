@@ -202,7 +202,7 @@
       </section>
 
       <section class="work section" id="work"><div class="container">
-        <div class="section-heading work-heading reveal"><p class="section-kicker">02 / SELECTED WORK</p><h2>Projects built around real operational needs.</h2><p>Seven focused builds across education technology, public web, flight reservations, healthcare scheduling, and security tools.</p></div>
+        <div class="section-heading work-heading reveal"><p class="section-kicker">02 / SELECTED WORK</p><h2>Projects built around real operational needs.</h2><p>Eight focused builds across education technology, computer-based testing, public web, flight reservations, healthcare scheduling, and security tools.</p></div>
         <div class="project-list">
           <article class="project project-featured reveal">
             <div class="project-display portal-display" aria-hidden="true">
@@ -219,19 +219,46 @@
 
           <article class="project project-reverse reveal">
             <div class="project-copy">
-              <div class="project-topline"><span>02</span><span>Public web / Production</span></div><h3>Sherman Nagel School Website</h3>
-              <p>A modern public-facing school website that communicates the school experience clearly, supports enquiries, and connects visitors to the school's online services.</p>
-              <ul class="project-points"><li>Designed as a responsive, content-first experience for students, families, and prospective parents.</li><li>Deployed at www.shermannagel.sch.ng.</li></ul>
-              <div class="tech-list"><span><img class="icon" src="/assets/icons/html5-plain.svg" alt="" aria-hidden="true" />HTML</span><span><img class="icon" src="/assets/icons/css3-plain.svg" alt="" aria-hidden="true" />CSS</span><span><img class="icon" src="/assets/icons/javascript-plain.svg" alt="" aria-hidden="true" />JavaScript</span><span><img class="icon" src="/assets/icons/cloudflare-plain.svg" alt="" aria-hidden="true" />Cloudflare Workers</span><span><img class="icon" src="/assets/icons/layers-3.svg" alt="" aria-hidden="true" />Responsive UI</span></div>
-              <a class="project-link" href="https://www.shermannagel.sch.ng" target="_blank" rel="noreferrer">Open live website <img class="icon" src="/assets/icons/arrow-up-right.svg" alt="" aria-hidden="true" /></a>
+              <div class="project-topline"><span>02</span><span>Web platform / Production</span></div><h3>Sherman Nagel CBT Portal</h3>
+              <p>A computer-based test platform run for the school's entrance aptitude test, carrying candidates from PIN sign-in through timed subject papers to published results, and built to grow into a full in-school CBT system.</p>
+              <ul class="project-points"><li>Candidates sign in with an Exam ID and PIN and see only their assigned subjects, while scoped admin accounts manage candidates, questions, schedules and results.</li><li>The exam engine runs timed, shuffled attempts, records violations as they happen, sweeps expired sessions automatically, and grants controlled retakes and rewrites with an audit trail.</li><li>A question bank with single and bulk entry, per-subject schedules, and 12 related tables covering candidates, attempts, answers and violations across 28 API endpoints.</li><li>Result sheets and CSV export with flag resolution, backed by CSPRNG-generated exam PINs, password policy checks, account lockout, and JWT sessions.</li></ul>
+              <div class="tech-list"><span><img class="icon" src="/assets/icons/react-original.svg" alt="" aria-hidden="true" />React 18</span><span><img class="icon" src="/assets/icons/vitejs-plain.svg" alt="" aria-hidden="true" />Vite</span><span><img class="icon" src="/assets/icons/nodejs-plain.svg" alt="" aria-hidden="true" />Node.js</span><span><img class="icon" src="/assets/icons/express-original.svg" alt="" aria-hidden="true" />Express</span><span><img class="icon" src="/assets/icons/supabase-plain.svg" alt="" aria-hidden="true" />Supabase</span><span><img class="icon" src="/assets/icons/cloudflare-plain.svg" alt="" aria-hidden="true" />Cloudflare</span></div>
+              <a class="project-link" href="https://cbt.shermannagel.sch.ng" target="_blank" rel="noreferrer">Visit live portal <img class="icon" src="/assets/icons/arrow-up-right.svg" alt="" aria-hidden="true" /></a>
             </div>
-            <div class="project-display website-display" aria-hidden="true"><div class="site-window"><div class="site-nav"><b>SN</b><i></i><i></i><i></i><span></span></div><div class="site-hero-ui"><small>EXCELLENCE IN EDUCATION</small><strong>Learning that<br />moves forward.</strong><em></em></div><div class="site-cards"><i></i><i></i><i></i></div></div><span class="display-note">PUBLIC EXPERIENCE / 002</span>
+            <div class="project-display cbt-display" aria-hidden="true">
+              <div class="exam-window">
+                <div class="exam-bar"><span>MATHEMATICS</span><em>32:14</em></div>
+                <div class="exam-progress"><i></i></div>
+                <div class="exam-body">
+                  <div class="exam-q"><b>12</b><p><i></i><i></i><i class="short"></i></p></div>
+                  <div class="exam-options">
+                    <div><b>A</b><i></i></div>
+                    <div class="picked"><b>B</b><i></i></div>
+                    <div><b>C</b><i></i></div>
+                    <div><b>D</b><i></i></div>
+                  </div>
+                </div>
+                <div class="exam-foot"><em>PREV</em><b>NEXT</b></div>
+              </div>
+              <span class="display-note">COMPUTER-BASED TESTING / 002</span>
             </div>
           </article>
 
           <article class="project project-reverse reveal">
             <div class="project-copy">
-              <div class="project-topline"><span>03</span><span>Web platform / Demo</span></div><h3>StudySync</h3>
+              <div class="project-topline"><span>03</span><span>Public web / Production</span></div><h3>Sherman Nagel School Website</h3>
+              <p>A modern public-facing school website that communicates the school experience clearly, supports enquiries, and connects visitors to the school's online services.</p>
+              <ul class="project-points"><li>Designed as a responsive, content-first experience for students, families, and prospective parents.</li><li>Deployed at www.shermannagel.sch.ng.</li></ul>
+              <div class="tech-list"><span><img class="icon" src="/assets/icons/html5-plain.svg" alt="" aria-hidden="true" />HTML</span><span><img class="icon" src="/assets/icons/css3-plain.svg" alt="" aria-hidden="true" />CSS</span><span><img class="icon" src="/assets/icons/javascript-plain.svg" alt="" aria-hidden="true" />JavaScript</span><span><img class="icon" src="/assets/icons/cloudflare-plain.svg" alt="" aria-hidden="true" />Cloudflare Workers</span><span><img class="icon" src="/assets/icons/layers-3.svg" alt="" aria-hidden="true" />Responsive UI</span></div>
+              <a class="project-link" href="https://www.shermannagel.sch.ng" target="_blank" rel="noreferrer">Open live website <img class="icon" src="/assets/icons/arrow-up-right.svg" alt="" aria-hidden="true" /></a>
+            </div>
+            <div class="project-display website-display" aria-hidden="true"><div class="site-window"><div class="site-nav"><b>SN</b><i></i><i></i><i></i><span></span></div><div class="site-hero-ui"><small>EXCELLENCE IN EDUCATION</small><strong>Learning that<br />moves forward.</strong><em></em></div><div class="site-cards"><i></i><i></i><i></i></div></div><span class="display-note">PUBLIC EXPERIENCE / 003</span>
+            </div>
+          </article>
+
+          <article class="project project-reverse reveal">
+            <div class="project-copy">
+              <div class="project-topline"><span>04</span><span>Web platform / Demo</span></div><h3>StudySync</h3>
               <p>A student course registration system for a university tutorial centre that manages student records, semester enrolment, instructors, and instructor-to-course assignments across four roles.</p>
               <ul class="project-points"><li>Role-based pages and API permissions for administrators, registration officers, managers, and instructors.</li><li>Duplicate-enrolment prevention, plus one active instructor assignment per course and semester.</li><li>Course enrolment and instructor-assignment reports, instructor class lists, and audit logging for important changes.</li></ul>
               <div class="tech-list"><span><img class="icon" src="/assets/icons/html5-plain.svg" alt="" aria-hidden="true" />HTML</span><span><img class="icon" src="/assets/icons/css3-plain.svg" alt="" aria-hidden="true" />CSS</span><span><img class="icon" src="/assets/icons/javascript-plain.svg" alt="" aria-hidden="true" />JavaScript</span><span><img class="icon" src="/assets/icons/nodejs-plain.svg" alt="" aria-hidden="true" />Node.js</span><span><img class="icon" src="/assets/icons/express-original.svg" alt="" aria-hidden="true" />Express</span><span><img class="icon" src="/assets/icons/shield-check.svg" alt="" aria-hidden="true" />JWT</span><span><img class="icon" src="/assets/icons/supabase-plain.svg" alt="" aria-hidden="true" />Supabase</span><span><img class="icon" src="/assets/icons/cloudflare-plain.svg" alt="" aria-hidden="true" />Cloudflare</span></div>
@@ -252,13 +279,13 @@
                   </div>
                 </div>
               </div>
-              <span class="display-note">COURSE REGISTRATION / 003</span>
+              <span class="display-note">COURSE REGISTRATION / 004</span>
             </div>
           </article>
 
           <article class="project project-reverse reveal reveal-delay">
             <div class="project-copy">
-              <div class="project-topline"><span>04</span><span>Web platform / Demo</span></div><h3>CareConnect Clinic Appointment System</h3>
+              <div class="project-topline"><span>05</span><span>Web platform / Demo</span></div><h3>CareConnect Clinic Appointment System</h3>
               <p>A hospital appointment and patient-management system that keeps registration, scheduling, consultations, and reports in one role-based clinic portal.</p>
               <ul class="project-points"><li>Six roles - patient, receptionist, doctor, nurse, manager, and admin - each with dashboard and API permissions.</li><li>Doctor weekly availability with available-slot generation, plus double-booking checks for both doctors and patients.</li><li>Appointment booking, rescheduling, cancellation, reminders, nurse vital-sign entry, and consultation records.</li><li>Attendance and doctor-utilisation reports, staff-account administration, and audit logs.</li></ul>
               <div class="tech-list"><span><img class="icon" src="/assets/icons/html5-plain.svg" alt="" aria-hidden="true" />HTML</span><span><img class="icon" src="/assets/icons/css3-plain.svg" alt="" aria-hidden="true" />CSS</span><span><img class="icon" src="/assets/icons/javascript-plain.svg" alt="" aria-hidden="true" />JavaScript</span><span><img class="icon" src="/assets/icons/nodejs-plain.svg" alt="" aria-hidden="true" />Node.js</span><span><img class="icon" src="/assets/icons/express-original.svg" alt="" aria-hidden="true" />Express</span><span><img class="icon" src="/assets/icons/shield-check.svg" alt="" aria-hidden="true" />JWT</span><span><img class="icon" src="/assets/icons/shield-check.svg" alt="" aria-hidden="true" />bcrypt</span><span><img class="icon" src="/assets/icons/supabase-plain.svg" alt="" aria-hidden="true" />Supabase</span></div>
@@ -276,13 +303,13 @@
                   <div class="clinic-slot"><small>WED</small><b>14:15</b><em>Dr. Akin · Check-up</em><i></i></div>
                 </div>
               </div>
-              <span class="display-note">APPOINTMENT SCHEDULING / 004</span>
+              <span class="display-note">APPOINTMENT SCHEDULING / 005</span>
             </div>
           </article>
 
           <article class="project project-reverse reveal">
             <div class="project-copy">
-              <div class="project-topline"><span>05</span><span>Systems / CLI</span></div><h3>GitHub Secrets Watcher</h3>
+              <div class="project-topline"><span>06</span><span>Systems / CLI</span></div><h3>GitHub Secrets Watcher</h3>
               <p>A command-line security tool that scans GitHub repositories (public and private, with a token) for environment and configuration files accidentally committed in Git history, and reports them without modifying anything.</p>
               <ul class="project-points"><li>A fast history walker diffs each commit against its first parent, so scanning cost scales with what changed, not depth times tree size; deleted files are traced back to the commit that last contained them, and content is probed so likely-secret files are ranked above name-only matches.</li><li>Persistent bare-clone cache with incremental fetches cuts repeat full-history scans to just a fetch of new commits, and an opt-in early-exit heuristic skips quiet stretches of history.</li><li>Multi-threaded scanning with an optional GitHub token for higher rate limits and private access, and a history depth that defaults to the entire reachable history.</li><li>Reports each finding with a validated, URL-encoded link to the exact commit in text, JSON (with per-repo scan stats), or CSV - read-only everywhere, it never edits a repository.</li></ul>
               <div class="tech-list"><span><img class="icon" src="/assets/icons/cplusplus-plain.svg" alt="" aria-hidden="true" />C++20</span><span><img class="icon" src="/assets/icons/braces.svg" alt="" aria-hidden="true" />libcurl</span><span><img class="icon" src="/assets/icons/braces.svg" alt="" aria-hidden="true" />JSON</span><span><img class="icon" src="/assets/icons/git-plain.svg" alt="" aria-hidden="true" />Git</span><span><img class="icon" src="/assets/icons/layers-3.svg" alt="" aria-hidden="true" />ANSI Colors</span></div>
@@ -299,7 +326,7 @@
                 <p><b>></b>     client/assets/js/config.js <strong>[LINK]</strong></p>
                 <p><b>></b>     server/src/config <strong>[LINK]</strong><span class="cursor"></span></p>
               </div>
-              <span class="display-note">SECURITY TOOL / 005</span>
+              <span class="display-note">SECURITY TOOL / 006</span>
             </div>
           </article>
 
@@ -315,7 +342,7 @@
                 </div>
               </div>
               <div class="project-copy">
-                <div class="project-topline"><span>06</span><span>Systems / CLI</span></div>
+                <div class="project-topline"><span>07</span><span>Systems / CLI</span></div>
                 <h3>Flight Reservation System CLI</h3>
                 <p>A modern C++20 reservation system for user accounts, flight seats, persistence, and payment verification.</p>
                 <div class="tech-list"><span><img class="icon" src="/assets/icons/cplusplus-plain.svg" alt="" aria-hidden="true" />C++20 Modules</span><span><img class="icon" src="/assets/icons/sqlite-plain.svg" alt="" aria-hidden="true" />SQLite</span><span><img class="icon" src="/assets/icons/shield-check.svg" alt="" aria-hidden="true" />Argon2id</span><span><img class="icon" src="/assets/icons/database.svg" alt="" aria-hidden="true" />Paystack API</span></div>
@@ -331,7 +358,7 @@
                 </div>
               </div>
               <div class="project-copy">
-                <div class="project-topline"><span>07</span><span>Desktop / In progress</span></div>
+                <div class="project-topline"><span>08</span><span>Desktop / In progress</span></div>
                 <h3>Flight Reservation System GUI</h3>
                 <p>A graphical evolution of the flight reservation experience, focused on making the core booking workflow approachable in a desktop interface.</p>
                 <div class="tech-list"><span><img class="icon" src="/assets/icons/cplusplus-plain.svg" alt="" aria-hidden="true" />C++</span><span><img class="icon" src="/assets/icons/windows8-original.svg" alt="" aria-hidden="true" />Desktop UI</span><span><img class="icon" src="/assets/icons/rocket.svg" alt="" aria-hidden="true" />Flight booking</span></div>
