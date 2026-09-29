@@ -99,4 +99,4 @@ The particle canvas caps its device-pixel ratio at 2 and stops animating entirel
 
 Released under the [MIT License](LICENSE).
 
-<p align="center"><sub>Built and maintained by <a href="https://github.com/gerald-mathew">Gerald-Mathew</a></sub></p>
+<p align="center"><sub>Built and maintained by <a href="https://github.com/gerald-mathew">Mathew Gerald Chukwudera</a></sub></p>
