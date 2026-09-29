@@ -1945,7 +1945,7 @@ a.project-link:hover .icon {
   }
 
   .hero-visual {
-    justify-self: start;
+    justify-self: end;
     width: min(100%, 430px);
   }
 
@@ -2200,13 +2200,14 @@ a.project-link:hover .icon {
   }
 
   .ticker-track {
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    gap: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 0;
     width: 100%;
-    min-height: 0;
-    padding: 30px 20px;
+    min-height: 56px;
+    padding: 14px 20px;
     animation: none;
     will-change: auto;
   }
@@ -2220,27 +2221,16 @@ a.project-link:hover .icon {
   }
 
   .ticker-pair {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
     align-items: center;
-    width: 100%;
+    flex: 0 0 auto;
   }
 
   .ticker-pair > span {
-    margin: 0;
-  }
-
-  .ticker-pair > span:first-child {
-    justify-self: end;
+    margin: 0 10px;
   }
 
   .ticker-pair > b {
-    justify-self: center;
-    align-self: center;
-    margin: 0 18px;
-  }
-
-  .ticker-pair > span:last-child {
-    justify-self: start;
+    margin: 0 4px;
   }
 }
