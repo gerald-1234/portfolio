@@ -1201,7 +1201,7 @@ a.project-link:hover .icon {
 }
 
 .cli-display {
-  background: #071013;
+  background: light-dark(#e9f1f3, #071013);
 }
 
 .terminal-window {
@@ -1241,7 +1241,7 @@ a.project-link:hover .icon {
 }
 
 .gui-display {
-  background: #131719;
+  background: light-dark(#e9f1f3, #131719);
 }
 
 .app-window {
@@ -1340,7 +1340,7 @@ a.project-link:hover .icon {
 
 /* StudySync course-registration mockup */
 .studysync-display {
-  background: #0d1419;
+  background: light-dark(#e9f1f3, #0d1419);
 }
 
 .course-window {
@@ -1452,7 +1452,7 @@ a.project-link:hover .icon {
 
 /* CareConnect clinic-schedule mockup */
 .careconnect-display {
-  background: #0e1215;
+  background: light-dark(#e9f1f3, #0e1215);
 }
 
 .clinic-window {
