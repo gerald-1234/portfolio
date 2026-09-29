@@ -32,6 +32,7 @@
   --surface: light-dark(#ffffff, #0c1216);
   --surface-soft: light-dark(#ffffff, #111a1f);
   --surface-deep: light-dark(#ffffff, #0b1014);
+  --display-surround: light-dark(#e9f1f3, #0b1014);
   --band: light-dark(#e6eff1, #0a1013);
 
   --line: light-dark(#d3e0e2, #26343b);
@@ -839,7 +840,7 @@ button {
   place-items: center;
   border: 1px solid var(--line);
   overflow: hidden;
-  background: var(--surface-deep);
+  background: var(--display-surround);
 }
 
 .project-display::before,
@@ -977,7 +978,7 @@ a.project-link:hover .icon {
   width: 83%;
   border: 1px solid #52656c;
   background: #172227;
-  box-shadow: 22px 23px 0 #101a1f;
+  box-shadow: 22px 23px 0 light-dark(rgba(13, 22, 26, 0.09), #101a1f);
   transform: rotate(-4deg);
 }
 
@@ -1100,7 +1101,7 @@ a.project-link:hover .icon {
   overflow: hidden;
   border: 1px solid #49626b;
   background: #d1ddd4;
-  box-shadow: -20px 23px 0 #101b20;
+  box-shadow: -20px 23px 0 light-dark(rgba(13, 22, 26, 0.09), #101b20);
   transform: rotate(3deg);
 }
 
@@ -1209,7 +1210,7 @@ a.project-link:hover .icon {
   padding-bottom: 18px;
   border: 1px solid #39535b;
   background: #0c191d;
-  box-shadow: 18px 18px 0 #111d22;
+  box-shadow: 18px 18px 0 light-dark(rgba(13, 22, 26, 0.09), #111d22);
   transform: rotate(-3deg);
   font-family: var(--mono);
 }
@@ -1249,7 +1250,7 @@ a.project-link:hover .icon {
   overflow: hidden;
   border: 1px solid #b6c2bc;
   background: #ece8dc;
-  box-shadow: 18px 18px 0 #383b33;
+  box-shadow: 18px 18px 0 light-dark(rgba(52, 48, 33, 0.13), #383b33);
   transform: rotate(3deg);
 }
 
@@ -1348,7 +1349,7 @@ a.project-link:hover .icon {
   overflow: hidden;
   border: 1px solid #4a5b6e;
   background: #eef0f4;
-  box-shadow: -15px 17px 0 #172028;
+  box-shadow: -15px 17px 0 light-dark(rgba(13, 22, 26, 0.09), #172028);
   transform: rotate(-2deg);
 }
 
@@ -1460,7 +1461,7 @@ a.project-link:hover .icon {
   overflow: hidden;
   border: 1px solid #4d6a66;
   background: #f6f4ee;
-  box-shadow: 17px -17px 0 #192021;
+  box-shadow: 17px -17px 0 light-dark(rgba(13, 22, 26, 0.09), #192021);
   transform: rotate(2deg);
 }
 
