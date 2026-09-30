@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Site checks
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.2.2
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+
+      - name: JavaScript syntax
+        run: |
+          set -euo pipefail
+          for f in assets/*.js; do
+            echo "node --check $f"
+            node --check "$f"
+          done
+
+      - name: Internal links resolve
+        run: |
+          set -euo pipefail
+          node .github/scripts/check-links.mjs
+
+      - name: CSS braces balanced
+        run: |
+          set -euo pipefail
+          node .github/scripts/check-css.mjs
