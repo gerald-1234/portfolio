@@ -55,20 +55,11 @@
   const tickerTrack = document.querySelector('[data-ticker]');
   if (tickerTrack) {
     const tickerRun = tickerTrack.querySelector('.ticker-run');
-    const reduceQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const pxPerSecond = 50;
     let frame = 0;
 
     const buildTicker = () => {
       tickerTrack.querySelectorAll('.ticker-run[data-clone]').forEach((clone) => clone.remove());
-
-      if (reduceQuery.matches) {
-        tickerTrack.classList.remove('is-animated');
-        tickerTrack.style.removeProperty('--ticker-shift');
-        tickerTrack.style.removeProperty('--ticker-duration');
-        tickerRun.style.removeProperty('width');
-        return;
-      }
 
       tickerRun.style.removeProperty('width');
       const unit = Math.ceil(tickerRun.getBoundingClientRect().width);
@@ -96,7 +87,6 @@
     };
 
     window.addEventListener('resize', scheduleTicker, { passive: true });
-    reduceQuery.addEventListener('change', scheduleTicker);
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(scheduleTicker, () => {});
     }
@@ -105,7 +95,6 @@
 
   const canvas = document.querySelector('.signal-field');
   const context = canvas.getContext('2d');
-  const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pointer = { x: -1000, y: -1000 };
   const gridSize = 64;
   const frameInterval = 1000 / 30;
@@ -190,7 +179,7 @@
     frameHandle = 0;
     if (document.hidden) return;
 
-    if (motionReduced || time - lastFrame >= frameInterval) {
+    if (time - lastFrame >= frameInterval) {
       lastFrame = time;
       const drift = (time * 0.008) % gridSize;
 
@@ -222,11 +211,11 @@
       });
     }
 
-    if (!motionReduced) frameHandle = requestAnimationFrame(draw);
+    frameHandle = requestAnimationFrame(draw);
   };
 
   const resume = () => {
-    if (motionReduced || frameHandle || document.hidden) return;
+    if (frameHandle || document.hidden) return;
     lastFrame = 0;
     frameHandle = requestAnimationFrame(draw);
   };
